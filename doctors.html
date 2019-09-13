@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" >
+    <title>Dental clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/media-css.css">
+  </head>
+  <body class="doctors-body">
+    <header class="page-header">
+      <div class="container page-header-container">
+    		<nav class="navbar navbar-expand-lg navbar-light ">
+    		  <a class="navbar-brand" href="#">
+    		  <img src="img/logo.png" alt="" class="logo">
+    		  </a>
+                <p  class="header-paragraph">
+                    <span> ԿԼԻՆԻԿԱՅԻ ԱՆՎԱՆՈՒՄԸ</span>
+                    <a href="#">Փոխել լոգոն և անվանումը </a>
+                </p>
+    		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+    		  </button>
+    		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			  <ul class="navbar-nav mr-auto navbar-ul">
+      			  <li class="nav-item active">
+      				  <a class="nav-link"  href="index.html">Օրացույց <span class="sr-only">(current)</span></a>
+      			  </li>
+      			  <li class="nav-item">
+      		  		<a class="nav-link" href="list_of_customers.html">Հիվանդի պատմություն</a>
+      			  </li>
+      			  <li class="nav-item">
+                <a class="nav-link" href="doctors.html">Աշխատակիցներ</a>
+      			  </li>
+      			  <li class="nav-item">
+                <a class="nav-link" href="customers.html">Կարգավորումներ</a>
+      			  </li>
+    		  	</ul>
+    		  </div>
+  		  </nav>
+      </div>
+    </header>
+    <section class="page-section">
+      <div class="container page-section-container">
+        <div class="row">
+          <div class="col-12">
+            <p class="section-heading">ՆՈՐ ԱՇԽԱՏԱԿԻՑ</p>
+          </div>
+        </div>
+        <div class="row checkbox-div doctors-check-div">
+          <div class="col-6 checkbox-second-div">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="defaultCheck1">
+                Արական
+              </label>
+              <input class="form-check-input" type="checkbox" value="">
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="defaultCheck2">
+                Իգական
+              </label>
+              <input class="form-check-input" type="checkbox" value="">
+            </div>
+          </div>
+          <div class="col-6 img-div">
+            <div id="upload-div" class="upload-div">
+              <button class="input-file-btn" id="lala" onclick="document.getElementById('getFile').click();" onchange="uploadFile(event);">
+                <img id="output" />
+               <input type='file' id="getFile" class="image-input" style="display:none">
+              </button>
+            </div>
+            <label class="form-check-label" for="inlineCheckbox2">Կցել նկար</label>
+          </div>
+        </div>
+
+        <form class="section-form doctors-form" id="doctors-form">
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="inputEmail4">Անուն</label>
+              <input type="text" class="form-control" >
+            </div>
+            <div class="form-group col-6">
+              <label for="inputPassword4">Ազգանուն</label>
+              <input type="text" class="form-control" >
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="inputEmail4">Ծննդյան օր</label>
+              <input type="date" class="form-control"   data-placeholder="" required aria-required="true" >
+            </div>
+            <div class="form-group col-6">
+              <label for="inputPassword4">Էլ. հասցե</label>
+              <input type="enail" class="form-control"  >
+            </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group col-6">
+             <label for="inputEmail4">Հեռախոս 1</label>
+             <input type="tel" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required >
+           </div>
+           <div class="form-group col-6">
+             <label for="inputPassword4">Հեռախոս 2</label>
+             <input type="tel" class="form-control" >
+           </div>
+        </div>
+        <div class="form-row" id="insert-row">
+          <div class="form-group col-6 insert-div" id="insert-div">
+            <label for="inputEmail4" id="status_label">Ստատուս</label>
+            <select class="custom-select status-select">
+              <option selected>Թերապիա</option>
+              <option value="1">-</option>
+              <option value="2">-</option>
+              <option value="3">-</option>
+            </select>
+            <span class="status-select-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+          <div class="form-group col-6 insert-btn-div">
+              <input type="button"  value="Ավելացնել" class="insert-btn" id="insert-btn" onclick="insert()">
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+         <div class="col-12">
+           <p class="schedule">Աշխատանքային գրաֆիկ</p>
+         </div>
+      </div>
+      <form class="schedule-form schedule-first-form">
+        <div class="form-row">
+          <div class="form-group col-4">
+            <input class="form-check-input" type="checkbox" value="" >
+            <label class="form-check-label container" for="defaultCheck1">
+               Երկուշաբթի
+            </label>
+            <span class="checkmark"></span>
+          </div>
+          <div class="form-group col-8">
+            <select class="custom-select hour-select" >
+              <option selected>08:00</option>
+              <option value="1">09:00</option>
+              <option value="2">10:00</option>
+              <option value="3">11:00</option>
+              <option value="3">12:00</option>
+              <option value="3">13:00</option>
+              <option value="3">14:00</option>
+              <option value="3">15:00</option>
+              <option value="3">16:00</option>
+              <option value="3">17:00</option>
+            </select>
+            <span class="select-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <span class="line"></span>
+            <select class="custom-select hour-select" >
+             <option selected>08:00</option>
+             <option value="1">09:00</option>
+             <option value="2">10:00</option>
+             <option value="3">11:00</option>
+             <option value="3">12:00</option>
+             <option value="3">13:00</option>
+             <option value="3">14:00</option>
+             <option value="3">15:00</option>
+             <option value="3">16:00</option>
+             <option value="3">17:00</option>
+           </select>
+           <span class="select-second-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </form>
+      <form class="schedule-form">
+        <div class="form-row">
+          <div class="form-group col-4">
+            <input class="form-check-input" type="checkbox" value="" >
+            <label class="form-check-label container" for="defaultCheck1">
+              Երեքշաբթի
+            </label>
+            <span class="checkmark"></span>
+          </div>
+          <div class="form-group col-8">
+            <select class="custom-select hour-select">
+             <option selected>08:00</option>
+             <option value="1">09:00</option>
+             <option value="2">10:00</option>
+             <option value="3">11:00</option>
+             <option value="3">12:00</option>
+             <option value="3">13:00</option>
+             <option value="3">14:00</option>
+             <option value="3">15:00</option>
+             <option value="3">16:00</option>
+             <option value="3">17:00</option>
+           </select>
+           <span class="select-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+           <span class="line"></span>
+           <select class="custom-select hour-select" >
+            <option selected>08:00</option>
+            <option value="1">09:00</option>
+            <option value="2">10:00</option>
+            <option value="3">11:00</option>
+            <option value="3">12:00</option>
+            <option value="3">13:00</option>
+            <option value="3">14:00</option>
+            <option value="3">15:00</option>
+            <option value="3">16:00</option>
+            <option value="3">17:00</option>
+          </select>
+          <span class="select-second-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </form>
+      <form class="schedule-form">
+        <div class="form-row">
+          <div class="form-group col-4">
+            <input class="form-check-input" type="checkbox" value="" >
+            <label class="form-check-label container" for="defaultCheck1">
+              Չորքշաբթի
+            </label>
+            <span class="checkmark"></span>
+          </div>
+          <div class="form-group col-8">
+            <select class="custom-select hour-select" >
+             <option selected>08:00</option>
+             <option value="1">09:00</option>
+             <option value="2">10:00</option>
+             <option value="3">11:00</option>
+             <option value="3">12:00</option>
+             <option value="3">13:00</option>
+             <option value="3">14:00</option>
+             <option value="3">15:00</option>
+             <option value="3">16:00</option>
+             <option value="3">17:00</option>
+           </select>
+           <span class="select-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+           <span class="line"></span>
+           <select class="custom-select hour-select" >
+            <option selected>08:00</option>
+            <option value="1">09:00</option>
+            <option value="2">10:00</option>
+            <option value="3">11:00</option>
+            <option value="3">12:00</option>
+            <option value="3">13:00</option>
+            <option value="3">14:00</option>
+            <option value="3">15:00</option>
+            <option value="3">16:00</option>
+            <option value="3">17:00</option>
+          </select>
+          <span class="select-second-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+        </div>
+       </form>
+       <form class="schedule-form">
+         <div class="form-row">
+           <div class="form-group col-4">
+             <input class="form-check-input" type="checkbox" value="" >
+             <label class="form-check-label container" for="defaultCheck1">
+               Հինգշաբթի
+             </label>
+             <span class="checkmark"></span>
+           </div>
+           <div class="form-group col-8">
+             <select class="custom-select hour-select" >
+              <option selected>08:00</option>
+              <option value="1">09:00</option>
+              <option value="2">10:00</option>
+              <option value="3">11:00</option>
+              <option value="3">12:00</option>
+              <option value="3">13:00</option>
+              <option value="3">14:00</option>
+              <option value="3">15:00</option>
+              <option value="3">16:00</option>
+              <option value="3">17:00</option>
+            </select>
+            <span class="select-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <span class="line"></span>
+            <select class="custom-select hour-select" >
+             <option selected>08:00</option>
+             <option value="1">09:00</option>
+             <option value="2">10:00</option>
+             <option value="3">11:00</option>
+             <option value="3">12:00</option>
+             <option value="3">13:00</option>
+             <option value="3">14:00</option>
+             <option value="3">15:00</option>
+             <option value="3">16:00</option>
+             <option value="3">17:00</option>
+           </select>
+           <span class="select-second-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+           </div>
+         </div>
+        </form>
+        <form class="schedule-form">
+          <div class="form-row">
+            <div class="form-group col-4">
+              <input class="form-check-input" type="checkbox" value="" >
+              <label class="form-check-label container" for="defaultCheck1">
+                Ուրբաթ
+              </label>
+              <span class="checkmark"></span>
+            </div>
+            <div class="form-group col-8">
+              <select class="custom-select hour-select" >
+               <option selected>08:00</option>
+               <option value="1">09:00</option>
+               <option value="2">10:00</option>
+               <option value="3">11:00</option>
+               <option value="3">12:00</option>
+               <option value="3">13:00</option>
+               <option value="3">14:00</option>
+               <option value="3">15:00</option>
+               <option value="3">16:00</option>
+               <option value="3">17:00</option>
+             </select>
+             <span class="select-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+             <span class="line"></span>
+             <select class="custom-select hour-select" >
+              <option selected>08:00</option>
+              <option value="1">09:00</option>
+              <option value="2">10:00</option>
+              <option value="3">11:00</option>
+              <option value="3">12:00</option>
+              <option value="3">13:00</option>
+              <option value="3">14:00</option>
+              <option value="3">15:00</option>
+              <option value="3">16:00</option>
+              <option value="3">17:00</option>
+            </select>
+            <span class="select-second-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            </div>
+          </div>
+         </form>
+
+         <form class="schedule-form">
+           <div class="form-row">
+             <div class="form-group col-4">
+               <input class="form-check-input" type="checkbox" value="" >
+               <label class="form-check-label container" for="defaultCheck1">
+                 Շաբաթ
+               </label>
+               <span class="checkmark"></span>
+             </div>
+             <div class="form-group col-8">
+               <select class="custom-select hour-select" >
+                <option selected>08:00</option>
+                <option value="1">09:00</option>
+                <option value="2">10:00</option>
+                <option value="3">11:00</option>
+                <option value="3">12:00</option>
+                <option value="3">13:00</option>
+                <option value="3">14:00</option>
+                <option value="3">15:00</option>
+                <option value="3">16:00</option>
+                <option value="3">17:00</option>
+              </select>
+              <span class="select-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+              <span class="line"></span>
+              <select class="custom-select hour-select" >
+               <option selected>08:00</option>
+               <option value="1">09:00</option>
+               <option value="2">10:00</option>
+               <option value="3">11:00</option>
+               <option value="3">12:00</option>
+               <option value="3">13:00</option>
+               <option value="3">14:00</option>
+               <option value="3">15:00</option>
+               <option value="3">16:00</option>
+               <option value="3">17:00</option>
+             </select>
+             <span class="select-second-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+             </div>
+           </div>
+          </form>
+          <form class="schedule-form">
+            <div class="form-row">
+              <div class="form-group col-4">
+                <input class="form-check-input" type="checkbox" value="" >
+                <label class="form-check-label container" for="defaultCheck1">
+                  Կիրակի
+                </label>
+                <span class="checkmark"></span>
+              </div>
+              <div class="form-group col-8">
+                <select class="custom-select hour-select" >
+                 <option selected>08:00</option>
+                 <option value="1">09:00</option>
+                 <option value="2">10:00</option>
+                 <option value="3">11:00</option>
+                 <option value="3">12:00</option>
+                 <option value="3">13:00</option>
+                 <option value="3">14:00</option>
+                 <option value="3">15:00</option>
+                 <option value="3">16:00</option>
+                 <option value="3">17:00</option>
+               </select>
+               <span class="select-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+               <span class="line"></span>
+               <select class="custom-select hour-select" >
+                <option selected>08:00</option>
+                <option value="1">09:00</option>
+                <option value="2">10:00</option>
+                <option value="3">11:00</option>
+                <option value="3">12:00</option>
+                <option value="3">13:00</option>
+                <option value="3">14:00</option>
+                <option value="3">15:00</option>
+                <option value="3">16:00</option>
+                <option value="3">17:00</option>
+              </select>
+              <span class="select-second-arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+              </div>
+            </div>
+           </form>
+           <div class="form-group schedule-textarea-div">
+             <label for="exampleFormControlTextarea3" class="schedule-label">Հավելյալ նշումների դաշտ</label>
+             <textarea class="form-control schedule-textarea" rows="7"></textarea>
+           </div>
+           <div class="row">
+             <div class="col-12 textarea-btn-div">
+               <button type="button" class="btn btn-primary textarea-btn">Պահպանել</button>
+             </div>
+           </div>
+         </div>
+      </section>
+
+    <footer class="page-footer doctors-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 ">
+            <p class="footer-paragraph">2019թ. Բոլոր իրավունքները պաշտպանված են </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src='js/jquery.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

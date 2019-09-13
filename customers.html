@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" >
+    <title>Dental clinic</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-css.css">
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container page-header-container">
+    		<nav class="navbar navbar-expand-lg navbar-light ">
+    		  <a class="navbar-brand" href="#">
+    		  <img src="img/logo.png" alt="" class="logo">
+    		  </a>
+                <p  class="header-paragraph">
+                    <span> ԿԼԻՆԻԿԱՅԻ ԱՆՎԱՆՈՒՄԸ</span>
+                    <a href="#">Փոխել լոգոն և անվանումը </a>
+                </p>
+    		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+    		  </button>
+    		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			  <ul class="navbar-nav mr-auto navbar-ul">
+      			  <li class="nav-item active">
+      				  <a class="nav-link"  href="index.html">Օրացույց <span class="sr-only">(current)</span></a>
+      			  </li>
+      			  <li class="nav-item">
+      		  		<a class="nav-link" href="list_of_customers.html">Հիվանդի պատմություն</a>
+      			  </li>
+      			  <li class="nav-item">
+                <a class="nav-link" href="doctors.html">Աշխատակիցներ</a>
+      			  </li>
+      			  <li class="nav-item">
+                <a class="nav-link" href="customers.html">Կարգավորումներ</a>
+      			  </li>
+    		  	</ul>
+    		  </div>
+  		  </nav>
+      </div>
+    </header>
+    <section class="page-section">
+      <div class="container page-section-container">
+        <p class="customer-heading">ԳՐԱՆՑՈՒՄ</p>
+        <div class="row">
+          <div class="col-12 col-xl-6 left-col">
+            <div class="form-check form-check-inline left-form-check">
+              <label class="form-check-label" for="inlineCheckbox1">Արական</label>
+              <input class="form-check-input" type="checkbox"  value="option1">
+            </div>
+            <div class="form-check form-check-inline left-form-check">
+              <label class="form-check-label" for="inlineCheckbox2">Իգական</label>
+              <input class="form-check-input" type="checkbox" value="option2">
+            </div>
+            <div class="form-check form-check-inline left-form-check">
+              <label class="form-check-label" for="inlineCheckbox3">Հղի</label>
+              <input class="form-check-input" type="checkbox" value="option3">
+            </div>
+            <div class="form-check form-check-inline left-form-check">
+              <label class="form-check-label" for="inlineCheckbox3">Կրծքով կերակրող</label>
+              <input class="form-check-input" type="checkbox" value="option4">
+            </div>
+            <form class="section-form customer-form" id="customer-form">
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="inputEmail4">Անուն</label>
+                  <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-6">
+                  <label for="inputPassword4">Ազգանուն</label>
+                  <input type="text" class="form-control"  >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="inputEmail4">Ծննդյան օր</label>
+                  <input type="date" class="form-control"  data-placeholder="" required aria-required="true" >
+                </div>
+                <div class="form-group col-6">
+                  <label for="inputPassword4">Էլ. հասցե</label>
+                  <input type="email" class="form-control" >
+                </div>
+             </div>
+             <div class="form-row">
+               <div class="form-group col-6">
+                 <label for="inputEmail4">Հեռախոս 1</label>
+                 <input type="tel" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required >
+               </div>
+               <div class="form-group col-6">
+                 <label for="inputPassword4">Հեռախոս 2</label>
+                 <input type="tel" class="form-control"  >
+               </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="inputEmail4">Բժիշկ</label>
+                <input type="text" class="form-control"  >
+              </div>
+              <div class="form-group col-6">
+                <label for="inputEmail4">Ախտորոշում</label>
+                <input type="text" class="form-control"  >
+              </div>
+             </div>
+             <h6 class="visit">Այցելություն</h6>
+             <div class="form-row" id="last_row">
+               <div class="form-group col-6">
+                 <label for="inputEmail4">Օր</label>
+                 <input type="date" class="form-control"  data-placeholder="" required  >
+               </div>
+               <div class="form-group col-6 insert-btn-div">
+                   <input type="button"  value="Ավելացնել" class="insert-btn" id="insert-btn" onclick="insert_day()">
+               </div>
+              </div>
+           </form>
+
+           <h6 class="information">Տեղեկություններ առողջության վերաբերյալ</h6>
+           <div class="form-group customer-textarea">
+             <label for="exampleFormControlTextarea3" class="schedule-label">Եթե կան ալերգիկ դրսևորումներ, նշեք դրանք.</label>
+             <textarea class="form-control schedule-textarea" rows="7"></textarea>
+           </div>
+
+           <label for="exampleFormControlTextarea3" class="schedule-label check-list-label">Եթե առկա են ստորև բերված հիվանդություններից որևէ մեկը, ապա նշեք այն</label>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Սրտի արատ</label>
+           </div>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Սրտամկանի ինֆարկտ</label>
+           </div>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Սրտի վիրահատություն</label>
+           </div>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Շնչառական համակարգի հիվանդություններ</label>
+           </div>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox"value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Ստամոքս-աղիքային համակարգի հիվանդություններ</label>
+           </div>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Վահանաձև գեղձի հիվանդություններ</label>
+           </div>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Ընկնավորում (Էպիլոպսիա)</label>
+           </div>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Շաքարային դիաբետ</label>
+           </div>
+           <div class="form-check customer-list">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Լյարդի հիվանդություն</label>
+           </div>
+           <div class="form-check ">
+             <input class="form-check-input" type="checkbox" value="option1">
+             <label class="form-check-label" for="defaultCheckbox1">Լյարդաբոբ (Հեպատիտ)</label>
+           </div>
+
+          <div class="form-group customer-textarea">
+             <label for="exampleFormControlTextarea3" class="schedule-label">Եթե կան այլ հիվանդություններ, նշեք դրանք.</label>
+             <textarea class="form-control schedule-textarea" rows="7"></textarea>
+           </div>
+           <div class="form-group customer-textarea">
+             <label for="exampleFormControlTextarea3" class="schedule-label">Հավելյալ նշումների դաշտ</label>
+             <textarea class="form-control schedule-textarea" rows="7"></textarea>
+           </div>
+          </div>
+
+          <div class="col-12 col-xl-6 right-col">
+            <div class="form-check form-check-inline right-div right-form-check">
+              <label class="form-check-label" for="inlineCheckbox1">Առաջնային հիվանդ</label>
+              <input class="form-check-input" type="checkbox" value="option1">
+            </div>
+            <div class="form-check form-check-inline right-form-check">
+              <label class="form-check-label" for="inlineCheckbox2">Հերթական հիվանդ</label>
+              <input class="form-check-input" type="checkbox" value="option2">
+            </div>
+            <div class="row tooths-div">
+              <div class="col-12 btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group" >
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth1"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth1"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth1"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth2"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth3"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth3"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth2"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth1"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth1"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth1"></button>
+                </div>
+              </div>
+              <div class="col-12 btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth5"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth5"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth5"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth6"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth6"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth4"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth6"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth6"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth5"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth5"></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary customer-tooth-btn customer-tooth5"></button>
+                </div>
+              </div>
+            </div>
+            <label class="form-check-label" for="inlineCheckbox2">Կցել ռենտգենի լուսանկարը</label>
+            <div id="upload-div" class="upload-div">
+              <button class="input-file-btn" id="img-btn" onclick="document.getElementById('getFile').click();" onchange="loadFile(event);">
+               <input type='file' id="getFile" class="image-input" >
+              </button>
+            </div>
+            <!--------------------- the popup window for the same customer  ------------------------->
+            <div class="popup" style="display:none">
+              <div class="same-customer">
+                <p class="popup-paragraph">Նույն տվյալներով գտնվել է ևս մեկ պատմություն.</p>
+                <form class="popup-form customer-form">
+                  <div class="form-group row">
+                     <label for="inputEmail3" class="col-6 col-form-label">Անուն Ազգանուն:</label>
+                     <div class="col-6">
+                       <input type="text" class="form-control" value="Պողոս Պողոսյան" readonly>
+                     </div>
+                   </div>
+                   <div class="form-group row">
+                      <label for="inputEmail3" class="col-6 col-form-label">Հեռախոսահամար:</label>
+                      <div class="col-6">
+                        <input type="email" class="form-control" value="0000000000000" readonly>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                       <label for="inputEmail3" class="col-6 col-form-label">Էլ. հասցե:</label>
+                       <div class="col-6">
+                         <input type="email" class="form-control" value="poghos@gmail.com" readonly>
+                       </div>
+                     </div>
+                     <div class="form-group row">
+                        <label for="inputEmail3" class="col-6 col-form-label">Վերջին այցելություն:</label>
+                        <div class="col-6">
+                          <input type="email" class="form-control" value="22/06/1998" readonly>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-primary popup-btn">Կցել պատմությանը</button>
+                      <button type="button" class="btn btn-primary popup-btn" id="popup-close-btn">Փակել</button>
+               </form>
+              </div>
+            </div>
+          </div>
+           <button type="button" class="btn btn-primary textarea-btn">Պահպանել</button>
+        </div>
+      </div>
+    </section>
+    <footer class="page-footer">
+  		<div class="container">
+        <div class="row">
+          <div class="col-sm-12 ">
+            <p class="footer-paragraph">2019թ. Բոլոր իրավունքները պաշտպանված են </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src='js/jquery.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+
+// $(document).ready(function(){
+//
+// 	var thumb = $('#thumb');
+//
+// 	new AjaxUpload('imageUpload', {
+// 		action: $('#newHotnessForm').attr('action'),
+// 		name: 'image',
+// 		onSubmit: function(file, extension) {
+// 			$('#preview').addClass('loading');
+// 		},
+// 		onComplete: function(file, response) {
+// 			thumb.load(function(){
+// 				$('#preview').removeClass('loading');
+// 				thumb.unbind();
+// 			});
+// 			thumb.attr('src', response);
+// 		}
+// 	});
+// });
+
+
+var loadFile = function(event) {
+	var upload_div = document.getElementById('upload-div');
+	var image = document.createElement("IMG");
+	var btn = document.getElementById('img-btn');
+	image.src = URL.createObjectURL(event.target.files[0]);
+  image.style.width="116px";
+  image.style.height="116px";
+	image.style.marginRight="10px";
+	image.style.marginBottom="10px";
+
+	upload_div.insertBefore(image, btn);
+
+
+
+  	// var image = document.getElementById('output');
+  	// image.src = URL.createObjectURL(event.target.files[0]);
+    // image.style.width="116px";
+    // image.style.height="116px";
+    // var img_div = document.getElementById('upload-div');
+    // var btn = document.getElementById('img-btn');
+    // img_div.aappendChild(btn);
+
+};
+
+
+
+
+
+// $('#upload-btn').change(function(e) {
+//
+//     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+//
+//         var file = e.originalEvent.srcElement.files[i];
+//
+//         var img = document.createElement("img");
+//         var reader = new FileReader();
+//         reader.onloadend = function() {
+//              img.src = reader.result;
+//              img.width = "117";
+//              img.height = "117";
+//         }
+//         reader.readAsDataURL(file);
+//         img.style.position = "absolute";
+//         img.style.right = "0" ;
+//         img.style.top = "0";
+//
+//         $('#btn-file').append(img);
+//
+// });
+
+
+
+//   var btn = document.getElementsByClassName('tooth-btn');
+//
+//   btn.onclick = function(){
+//   // $(this).parent().find("myspan").show();
+//   $(this).parent().find("myspan").style.display="block";
+// }
+
+
+
+
+input[type="date"]::-webkit-inner-spin-button {
+       opacity: 0
+   }
+   input[type="date"]::-webkit-calendar-picker-indicator {
+       background: url(../img/calendar_icon.png) center/70% no-repeat;
+       color: rgba(0, 0, 0, 0);
+       opacity: 1;
+   }
+   /* input[type="date"]::-webkit-calendar-picker-indicator:hover {
+       background: url(../img/calendar_icon.png) center/70% no-repeat;
+        opacity: 1;
+   }
+input[type=date]::-webkit-datetime-edit-text {
+    -webkit-appearance: none;
+    display: none;
+}
+input[type=date]::-webkit-datetime-edit-month-field{
+    -webkit-appearance: none;
+    display: none;
+}
+input[type=date]::-webkit-datetime-edit-day-field {
+    -webkit-appearance: none;
+    display: none;
+}
+input[type=date]::-webkit-datetime-edit-year-field {
+    -webkit-appearance: none;
+    display: none;
+} */
+/* input[value="0000-00-00"]::-webkit-datetime-edit {
+     color: transparent;
+} */
+
+/* Popup arrow */
+/* .popup .popuptext::after {
+  content: "";
+    position: absolute;
+    right: 100%;
+    top: 14%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #ffffff transparent transparent;
+} */
+
+
+
+
+/*media queris*/
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) {
+ .left-col, .right-col{
+   padding-left: 0px !important;
+ }
+ .checkbox-second-div{
+   padding-left: 227px !important;
+ }
+ .img-div{
+   padding-left: 106px !important;
+ }
+ .doctors-form{
+   margin-left: 209px;
+ }
+ .schedule-textarea-div{
+   margin-left: 227px !important;
+ }
+ .textarea-btn-div{
+   padding-right: 368px !important;
+ }
+ .textarea-btn{
+   margin: 20px 0px 0px 0px !important;
+ }
+ .schedule{
+   margin-right: 115px !important;
+ }
+ .schedule-form{
+   margin-left: 316px !important;
+ }
+ /* .page-footer{
+    padding: 20px 0px 0px 460px !important;
+ }
+}*/
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px && max-width: 1200px) {
+ .left-col, .right-col{
+   padding-left: 229px !important;
+ }
+ .checkbox-second-div{
+   padding-left: 227px !important;
+ }
+ .doctors-form{
+   margin-left: 209px;
+ }
+ .schedule-textarea-div{
+   margin-left: 227px !important;
+ }
+ .textarea-btn-div{
+   padding-right: 188px !important;
+ }
+ .textarea-btn{
+   margin: 20px 0px 0px 223px !important;
+ }
+ .header-paragraph, .header-paragraph a{
+   font-size: 12px !important;
+ }
+  .page-footer{
+    padding: 20px 0px 0px 360px !important;
+ }
+}
+
+  .navbar-toggler{
+      position: relative !important;
+      top: -14px !important;
+  } */
+/*end of media queris*/
+
+
+
+
+/* @media (width: 992px) {
+  .navbar-collapse{
+    width: 79% !important;
+  }
+ .page-header-container{
+    max-width: 970px;
+  }
+    .header-paragraph{
+        margin-right: 50px;
+    }
+    .header-paragraph a{
+        font-size: 12px;
+    }
+    .header-paragraph span{
+        font-size: 14px;
+    }
+    .navbar-nav{
+      margin: 0px;
+      padding-top: 13px;
+    }
+    .navbar-nav .nav-item .nav-link{
+      padding: 21px 8px;
+    }
+
+} */
+
+/* @media (min-width: 766px) and (max-width: 767px){
+ .page-header-container{
+    max-width: 720px;
+  }
+    .header-paragraph{
+        margin-right: 285px;
+    }
+
+
+} */
+
+/* @media (max-width: 1200px) {
+    .nav-item .nav-link{
+        font-size: 14px;
+    }
+}
+
+ @media (max-width: 992px) {
+    .navbar-nav{
+        height: 100%;
+        background: #274abb;
+        z-index: 99;
+    }
+
+    .navbar-toggler{
+        position: relative;
+        top: -14px;
+    }
+} */
